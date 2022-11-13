@@ -1,0 +1,273 @@
+:root {
+  --customTeal: rgb(77, 202, 202);
+  --itemBlue: rgb(144, 163, 174);
+  --cream: rgb(255,253,208)
+}
+
+
+body {                    
+  color: var(--customTeal);
+  background-color: #525f75;
+  font-family: 'Sara';
+  font-size: 12pt;
+  max-width: 90%;
+  margin:0% 10% 0% 10%;
+  padding:0px 0px 300px 0px; 
+  border: 0pt solid rgb(255, 219, 88)       
+}
+
+
+nav {
+  background-color: var(--itemBlue);
+  border: 5pt solid var(--cream); 
+  font-size: 18pt; 
+  font-weight: bold;
+  line-height: 500% ;
+  margin: 10% 0% 0% 0% ;
+  padding: 0px ;
+  text-decoration: underline;
+  text-align: center;
+
+}
+nav a {
+  color:rgb(255, 219, 88);
+  margin-right:25px;
+  padding:5px;
+  text-align:center;
+}
+nav a:hover {
+  background-color: gray;
+  color: var(--customTeal)
+}
+
+header , footer {                   
+background-color: var(--itemBlue);
+color: rgb(189, 237, 255);
+border-right: 5pt solid var(--cream);
+border-left: 5pt solid var(--cream); 
+border-bottom: 5pt solid var(--cream); 
+font-family: 'Sara';
+font-size: 22pt;
+font-weight: bolder;
+margin:0px;               
+padding:2%  ;
+text-align: center;
+}
+
+.modal {
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.categoryBtn {
+  width:35%;
+  display: inline-table;
+  margin-right:0px;
+  margin-left:0px;
+  border: 0px
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+main {
+background-color: var(--itemBlue);
+color: var(--cream);
+border-right: 5pt solid var(--cream);
+border-left: 5pt solid var(--cream); 
+border-bottom: 5pt solid var(--cream); 
+font-size: 16pt;
+font-weight: lighter;
+line-height: 200%;
+margin:0px;
+padding: 10px;
+text-align:center
+}
+
+
+/*  -----  Typography  ----- */
+p {
+  margin: 0% 15% 0% 15%;
+  font-size: 14pt;
+}
+footer p{
+  margin-top:0px;
+  margin:2%
+}
+header p{
+  margin-top: -2%
+}
+
+
+
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+span {
+  margin:5%;
+}
+table {
+  border-collapse: collapse;
+  border:2pt solid #023f05;
+  width: 70%;
+  margin:0% 0% 5% 15%;
+  padding: 0%
+}
+caption {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bolder;
+  margin:3%
+}
+thead {
+font-weight: bolder;
+font-size:18pt
+}
+
+
+
+tr {
+  border-bottom: 1pt solid #023f05;
+  padding:1%
+}
+  tr:nth-child(even) {
+    background-color: rgb(130, 130, 120);
+
+  }
+th {
+  border-bottom: 2pt solid #023f05;
+  background-color: rgb(65, 65, 60);
+  padding:0%;
+  margin:3%
+
+}
+th:nth-child(1) {
+  text-align: left;
+  padding-left:2%
+}
+th:nth-child(2) {
+  text-align: left;  
+}
+th:nth-child(3) {
+  text-align: right;
+  padding-right: 2%    
+  
+}
+
+  td:nth-child(1) {
+    text-align: left;
+    padding-left:2%;
+  }
+  td:nth-child(2) {
+    text-align: left; 
+    
+  }
+  td:nth-child(3) {
+    text-align: right;
+    padding-right: 2%    
+    
+  }
+
+
+
+button {
+    font-family:"Sara";
+    font-size: 12pt;
+    padding: 2%;
+    margin:1%;
+    background-color: #e7e7e7;
+    cursor: pointer;
+    opacity: .6;
+  }
+  input {
+    font-family:"Sara";
+    font-size: 12pt;
+    padding: 2%;
+    margin:1%;
+    text-align:center;
+    background-color: #e7e7e7 ;
+    opacity: .5
+  }
+  ::placeholder{
+    color: black
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+
+select {
+    font-family:"Sara";
+    font-size: 12pt;
+    padding: 2%;
+    margin:1%;
+    text-align:center;
+    background-color: #e7e7e7 ;
+    opacity: .5
+}
