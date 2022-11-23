@@ -3,7 +3,7 @@ import Category from './Category';
 import { useState, useEffect } from 'react';
 
 
-function CategoryList({ categories, handleDelete, onDelete, onEdit, onView }) {
+function CategoryList({ categories, handleDelete, onDelete, onEdit, onView, onDeleteTrans }) {
 
     return (
         <div>
@@ -25,6 +25,7 @@ function CategoryList({ categories, handleDelete, onDelete, onEdit, onView }) {
                             category={category}
                             key={i}
                             onDelete={onDelete}
+                            onDeleteTrans={onDeleteTrans}
                             onEdit={onEdit}
                             handleDelete={handleDelete}
                             onView={onView}

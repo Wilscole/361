@@ -3,6 +3,8 @@ import BudgetList from '../components/BudgetList';
 import Popup from '../components/PopUp';
 import { useState, useEffect } from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import { MdInfoOutline } from 'react-icons/md';
+
 
 function HomePage({ setBudgetToEdit, setViewBudgets }) {
     const [budgets, setBudgets] = useState([])
@@ -99,19 +101,19 @@ function HomePage({ setBudgetToEdit, setViewBudgets }) {
                     onDelete={onDelete}
                 />
             )}
-            <h2>Budget Tracker</h2>
-            <p>Welcome! Are you a new user? If so, start by creating a new budget with the button below!</p>
-            <button><Link to="../add-budget">Create Budget</Link></button>
-            <p>Below is a historical view of the budgets you have created! Toggle the 'Active' button to see budgets that are currently active. Toggling the button off, will
-                remove any inactive budgets!
-            </p>
-            <p>Active View: </p>
-            <label class="switch">
-                <input type="checkbox" checked={toggle} onClick={handleClick} />
-                <span class="slider round"></span>
-            </label>
-            <BudgetList budgets={budgets} onDelete={onDelete} onEdit={onEdit} handleDelete={handleDelete} toggle={toggle} onView={onView}></BudgetList>
+            <h1>Budget Tracker</h1>
+            <h2>New User?</h2>
+            <button><Link to="../add-budget">Create Budget</Link></button><br />
+            <div>
+                <h2 class="hovertext" data-hover="Below is a historical view of the budgets you have created! Toggle the 'Active' button to see budgets that are currently active. Toggling the button off, will
+                remove any inactive budgets!" > <MdInfoOutline /> Active View</h2>
+                <label class="switch">
+                    <input type="checkbox" checked={toggle} onClick={handleClick} />
+                    <span class="slider round"></span>
+                </label>
+            </div>
 
+            <BudgetList budgets={budgets} onDelete={onDelete} onEdit={onEdit} handleDelete={handleDelete} toggle={toggle} onView={onView}></BudgetList>
         </>
     )
 }

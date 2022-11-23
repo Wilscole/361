@@ -3,7 +3,7 @@ import { MdDeleteForever, MdEdit, MdCheckCircleOutline, MdVisibility } from 'rea
 import { useState, useEffect } from 'react';
 
 
-function Category({ category, handleDelete, onEdit, onView }) {
+function Category({ category, handleDelete, onEdit, onView, onDeleteTrans }) {
     const [transactions, setTransactions] = useState([])
 
     const loadTrans = async () => {
@@ -32,8 +32,7 @@ function Category({ category, handleDelete, onEdit, onView }) {
 
             <td><MdVisibility onClick={() => onView(category)} /></td>
             <td><MdEdit onClick={() => onEdit(category)} /></td>
-            <td><MdDeleteForever onClick={() =>
-                handleDelete(category._id)} /></td>
+            <td><MdDeleteForever onClick={() => handleDelete(category._id, category.name)} /></td>
         </tr>
     );
 }

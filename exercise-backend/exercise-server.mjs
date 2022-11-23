@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import { application } from 'express';
 
 mongoose.connect(
     process.env.MONGODB_CONNECT_STRING,
@@ -111,5 +112,6 @@ const deleteTransById = async (_id) => {
 db.once("open", () => {
     console.log("Successfully connected to MongoDB using Mongoose!");
 });
+
 
 export { deleteTransById, findTransaction, createTransaction, replaceCategory, deleteCatById, findCategory, createBudget, createCategory, findBudgetById, findBudget, replaceBudget, deleteById, findBudgetByWeight };
