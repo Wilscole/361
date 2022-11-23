@@ -3,8 +3,11 @@ import express from 'express';
 import asyncHandler from 'express-async-handler';
 import * as budgets from './exercise-server.mjs';
 
+const cors = require("cors");
 
-const PORT = process.env.PORT
+
+
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -191,7 +194,14 @@ app.delete('/transaction/:_id', (req, res) => {
         });
 });
 
+const path = require("path");
 
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./exercise-frontend/build")));
+// Step 2:
+app.get("*", function (request, response) {
+    response.sendFile(path.resolve(__dirname, "./exercise-frontend/build", "index.html"));
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`)

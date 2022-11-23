@@ -5,7 +5,12 @@
     "main": "exercise-controller.mjs",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon exercise-controller.mjs"
+      "build": "cd ../exercise-frontend && npm run build",
+        "install-client": "cd ../exercise-frontend && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "nodemon exericse-controller.mjs",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix exericse-frontend\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix exercise-frontend\""
     },
     "author": "",
     "license": "ISC",
